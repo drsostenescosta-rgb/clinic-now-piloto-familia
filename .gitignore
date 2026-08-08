@@ -1,0 +1,8 @@
+.env
+.env.*
+*.log
+.DS_Store
+# Dados do piloto nunca vao para o git
+dados/
+gravacoes/
+transcricoes/
