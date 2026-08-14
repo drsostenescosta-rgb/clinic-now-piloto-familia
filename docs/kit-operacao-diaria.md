@@ -137,6 +137,21 @@ mexido — pare e investigue antes de continuar.
 > Se um dia isso precisar valer como prova para terceiros, o caminho é guardar o último hash
 > fora da máquina (e-mail diário para você mesmo já resolve).
 
+**Se o alarme acender.** Duas coisas acontecem sozinhas, de propósito:
+
+1. **O sistema para de gravar.** Qualquer aprovação nova é recusada com o motivo. Isso existe
+   porque antes a próxima mensagem normal regravava a âncora e **apagava a evidência** — quem
+   ignorasse o aviso por um atendimento perdia a prova para sempre.
+2. **A única saída é assinada.** Não edite o arquivo à mão: esse é justamente o gesto que a
+   âncora deveria tornar suspeito. Use:
+
+```bash
+node emily-vendas/ledger.mjs reancorar --confirmo "Sostenes" "limpei o ledger em teste"
+```
+
+Ele não apaga nada: grava dentro do próprio ledger quem reancorou, quando, por quê e qual era a
+divergência. A marca fica lá para sempre — é esse o ponto.
+
 ### Base de comparação (medida ANTES do piloto, com a Andreia, em 11/08/2026)
 
 | Métrica | Antes do piloto | Meta em 7 dias |
