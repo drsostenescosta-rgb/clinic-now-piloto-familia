@@ -85,8 +85,16 @@ cartão. Essas você liga, não manda mensagem.
 ## 6. Por que o preflight está reprovado (e por que isso é certo)
 
 O preflight reprova com 11 problemas, todos vindos de **5 respostas que faltam da Andreia**.
-Enquanto isso durar, o sistema opera em **modo sintético**: nenhum dado real entra, e a Emily
-**não oferece horário**.
+Enquanto isso durar, o sistema opera em **modo sintético**: a Emily **não oferece horário** e o
+sistema só aceita apelidos no formato `Cliente Demo NN`.
+
+> **O que a proteção de dados realmente faz — e o que ela não faz.**
+> O sistema **recusa** e-mail, telefone (com ou sem separador, e com prefixo internacional), SSN e
+> data de nascimento, e recusa qualquer identificador que não seja um apelido sintético.
+> Ele **não sabe** reconhecer que "Larissa Mendes de Souza" é o nome de uma pessoa — reconhecer
+> nome exigiria uma lista de nomes e erraria mesmo assim.
+> Portanto: **a regra que protege dado de cliente é você não digitar dado de cliente.** O software
+> reduz o risco; ele não substitui essa regra.
 
 | # | O que falta | Consequência hoje |
 |---|---|---|
@@ -116,8 +124,18 @@ node emily-vendas/ledger.mjs stats        # o que aconteceu na semana
 node emily-vendas/ledger.mjs verificar    # a cadeia de aprovações está íntegra?
 ```
 
-`verificar` tem de dizer **Cadeia ÍNTEGRA**. Se disser QUEBRADA, alguém editou o arquivo de
-aprovações à mão — pare e investigue antes de continuar.
+`verificar` tem de dizer **Cadeia ÍNTEGRA**. Se disser **QUEBRADA**, o arquivo de aprovações foi
+mexido — pare e investigue antes de continuar.
+
+> **O que "ÍNTEGRA" prova, e o que não prova.**
+> A verificação compara duas coisas: a cadeia de hash *dentro* do arquivo e uma âncora externa
+> (`.aprovacoes-ancora.json`) com o total de eventos e o último hash. Com isso ela detecta:
+> linha editada no meio, linha apagada, arquivo truncado e arquivo reescrito por inteiro.
+> O que ela **não** faz: impedir quem tem acesso ao seu computador de reescrever os **dois**
+> arquivos de forma coerente. Isto é detecção de acidente, bug e edição descuidada — **não é
+> prova criptográfica contra alguém mal-intencionado com acesso à máquina.**
+> Se um dia isso precisar valer como prova para terceiros, o caminho é guardar o último hash
+> fora da máquina (e-mail diário para você mesmo já resolve).
 
 ### Base de comparação (medida ANTES do piloto, com a Andreia, em 11/08/2026)
 
