@@ -182,3 +182,34 @@ respondido em até 15 minutos** e **um plano piloto de divulgação**.
   **não para a operação** — as regras e os textos funcionam sem ela.
 - Nada de dado real de paciente entra no sistema antes de: Auth + RLS por dona (E2) aplicados e
   política de retenção definida (pendência 7.3).
+
+---
+
+## 9. Rodar em OPERAÇÃO REAL (não demonstração)
+
+A demonstração serve para mostrar à Andreia e à Lohane. Para **operar de verdade** por ela:
+
+```bash
+cd ~/Applications/medgrowth && npm run api:operacao
+```
+
+Em outra janela:
+
+```bash
+cd ~/Applications/clinic-now-app && npm run dev:operacao
+```
+
+O painel ganha a caixa **"Chegou mensagem no WhatsApp"**: você cola a mensagem como ela chegou,
+diz como chama a cliente e quantas sessões ela já fez, e a Emily decide.
+
+**O que muda na proteção de dados neste modo.** Em vez de RECUSAR dado sensível (que tornaria o
+sistema inutilizável), o ledger **REDIGE antes de gravar**: telefone, e-mail, documento e data de
+nascimento viram `[telefone removido]` e afins, e o scanner confere depois de redigir — se ainda
+sobrar algo, a gravação é recusada mesmo assim.
+
+O que isso **não** resolve, e continua sendo regra sua:
+- **Nome próprio não é detectável.** Use o primeiro nome ou um apelido; não digite sobrenome.
+- **Retenção continua pendente (7.3).** Enquanto a Andreia não disser por quantos dias guardar,
+  o arquivo `aprovacoes.jsonl` fica na sua máquina, fora do Git, sem prazo definido para apagar.
+
+Conectar direto no WhatsApp dela: `docs/conectar-whatsapp.md`.
