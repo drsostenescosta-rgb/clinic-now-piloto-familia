@@ -10,7 +10,14 @@ Primeiro caso de aplicação real do **ClinicNow** (o produto único para clíni
 
 ## Estado atual
 
-Fase de descoberta. Próximo passo: Sostenes entrevista a mãe com o roteiro de `docs/roteiro-entrevista.md`, colhe o consentimento de `docs/consentimento.md`, e o resultado alimenta o system prompt v1 da Emily.
+Entrevista de descoberta realizada em 11/08/2026 e dores operacionais registradas. O consentimento assinado e as respostas bloqueadoras do questionário ainda precisam ser confirmados antes de qualquer uso de dado real.
+
+Já existem duas entregas independentes dessas respostas:
+
+- um workbench local de shadow sintético, com cinco cenários críticos e revisão independente aprovada somente para simulação;
+- uma fundação local do app em modo sintético, com aliases artificiais, bloqueio de integrações, buffer e prevenção de sobreposição. Auth/RLS e SQL estão apenas preparados para aplicação futura, não executados.
+
+O estado detalhado, os comandos e os limites estão em `docs/estado-implementacao-2026-08-11.md`.
 
 ## Regras do piloto (invioláveis)
 
@@ -22,7 +29,11 @@ Fase de descoberta. Próximo passo: Sostenes entrevista a mãe com o roteiro de 
 
 ## Mapa do repositório
 
+- `config/clinica-andreia.md` — **configuração da clínica** a partir das respostas de Andreia (11/08/2026): identidade, agenda, serviços, regras invioláveis e as pendências abertas. Comece por aqui.
+- `config/clinica-config.json`, `config/agenda-config.json`, `config/operacao-assistida.json` — a mesma configuração no formato que o preflight lê.
 - `docs/roteiro-entrevista.md` — roteiro da entrevista de descoberta com a mãe.
 - `docs/consentimento.md` — termo de consentimento LGPD para gravação e uso dos dados no piloto.
+- `docs/operacao-assistida-andreia.md` — runbook da operação humana no loop.
+- `docs/estado-implementacao-2026-08-11.md` — entregas implementadas, evidências e gates ainda abertos.
 - `BACKLOG.md` — as fatias do piloto, em ordem.
 - `docs/decisoes/` — decisões caras de reverter, uma por arquivo.

@@ -1,0 +1,31 @@
+{
+  "_fonte": "Questionario secao 2, respondido por Andreia em 11/08/2026.",
+  "_aviso": "agenda.dias esta PENDENTE-CONFIRMAR de proposito. Ver config/clinica-andreia.md secao 'Pendencias'.",
+  "fonte_verdade": "Agendor",
+  "fuso_horario": "America/New_York",
+  "duracao_min": 50,
+  "buffer_min": 10,
+  "antecedencia_horas": 24,
+  "quem_altera_agenda": {
+    "cria_remarca_cancela": ["Andreia Carvalho"],
+    "emily": "apenas sugere e prepara; nenhuma alteracao sem aprovacao da Andreia e confirmacao explicita da cliente"
+  },
+  "divergencia_agenda": "Se a agenda do Agendor e a informacao manual divergirem, NAO marcar nada: pausar e perguntar a Andreia qual esta correta (resposta 2.7).",
+  "dias": {
+    "seg": ["[PREENCHER — PENDENTE-CONFIRMAR 2.3: resposta '2:00 as 8:00' e ambigua (AM/PM) e conflita com o bloqueio da academia 07:30-10:00]"],
+    "ter": ["[PREENCHER — PENDENTE-CONFIRMAR 2.3: resposta '11:00 as 8:00' e ambigua (AM/PM)]"],
+    "qua": ["[PREENCHER — PENDENTE-CONFIRMAR 2.3: resposta '10:30 as 8:00' e ambigua (AM/PM)]"],
+    "qui": ["[PREENCHER — PENDENTE-CONFIRMAR 2.3: resposta '10:00 as 8:00' e ambigua (AM/PM)]"],
+    "sex": ["[PREENCHER — PENDENTE-CONFIRMAR 2.3: resposta '8:00 as 8:00' e ambigua (AM/PM) e conflita com o bloqueio da academia 07:30-10:00]"],
+    "sab": ["[PREENCHER — PENDENTE-CONFIRMAR 2.3: resposta '8:00 as 8:00' e ambigua (AM/PM) e conflita com o bloqueio da academia 07:30-10:00]"],
+    "dom": ["[PREENCHER — PENDENTE-CONFIRMAR 2.3: resposta '10:30 as 3:00' e ambigua (AM/PM); confirmar se domingo abre mesmo]"]
+  },
+  "bloqueios_fixos": [
+    {
+      "nome": "academia",
+      "faixa": "07:30-10:00",
+      "dias": "[PREENCHER — PENDENTE-CONFIRMAR 2.6: Andreia informou a faixa 07:30-10:00 mas nao disse em quais dias da semana]",
+      "regra": "Bloqueio total: a Emily nunca oferece horario dentro dessa faixa."
+    }
+  ]
+}

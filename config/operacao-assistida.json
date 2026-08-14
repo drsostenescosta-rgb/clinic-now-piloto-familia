@@ -1,0 +1,151 @@
+{
+  "_fonte": "Questionario secoes 3-9, respondido por Andreia em 11/08/2026, + regras invioláveis da entrevista.",
+  "_aviso": "Campos com [PREENCHER sao PENDENTE-CONFIRMAR. O preflight falha de proposito ate serem respondidos.",
+  "modo": "assistido",
+  "responsavel_escalacao": "Andreia Carvalho",
+  "revisao_humana_obrigatoria": true,
+  "automacao": {
+    "envio_automatico": false
+  },
+  "canal_escalacao": {
+    "destino": "WhatsApp pessoal da Andreia (numero NAO versionado — fica fora do git)",
+    "prazo_alvo": "sem prazo declarado por Andreia; a Emily nunca decide sozinha enquanto espera"
+  },
+  "escalonamento": {
+    "topicos": [
+      "clinico",
+      "urgencia",
+      "pessoal",
+      "preco_nao_autorizado",
+      "intercorrencia_pos_operatorio",
+      "cancelamento_tardio_sexta_sabado",
+      "atraso_10min",
+      "duvida_sem_resposta_aprovada",
+      "divergencia_agenda"
+    ],
+    "quando_nao_sabe": "Dizer que vai confirmar com a Andreia, registrar a duvida e NAO inventar resposta nem prazo (resposta 5.5)."
+  },
+  "shadow_sintetico": {
+    "habilitado": true,
+    "revisor_humano": "Sostenes",
+    "simulacoes": [
+      "novo_pedido",
+      "conflito",
+      "confirmacao_ambigua",
+      "cancelamento",
+      "escalacao_clinica"
+    ]
+  },
+  "regras": {
+    "confirmacao": {
+      "exige_confirmacao_explicita": true,
+      "reconfirma_termos_ambiguos": true,
+      "aceitos": ["sim", "confirmo", "confirmado", "sim, confirmo"],
+      "nao_aceitos": ["ta bom", "tá bom", "ok", "blz", "👍", "emoji sozinho", "silencio"],
+      "mensagem_vespera": "Oi, [nome]! Tudo bem? Passando para confirmar seu horario amanha, as [hora], para [servico]. Voce confirma que estara presente? 🙋‍♀️",
+      "repergunta_padrao": "So para confirmar direitinho: posso considerar confirmado seu horario de [servico], amanha as [hora]? Responde sim ou nao, por favor 😘"
+    },
+    "cancelamento": {
+      "nao_remove_sem_confirmacao_explicita": true,
+      "revisao_humana_obrigatoria": true,
+      "antecedencia_minima_horas": 24,
+      "regra_sexta_sabado": "Cancelamento com menos de 24h em sexta ou sabado: falar com Andreia ANTES de remarcar (resposta 4.5).",
+      "oferta_de_alternativas": "A Emily pode mostrar outros horarios disponiveis, mas mantem o horario atual ate a cliente confirmar claramente a troca (resposta 4.7)."
+    },
+    "atraso": {
+      "minutos_para_avisar_andreia": 10,
+      "regra": "Com 10 minutos de atraso, avisar Andreia. A Emily nao decide remarcar nem liberar o horario."
+    },
+    "transparencia": {
+      "identifica_como_assistente": true,
+      "regra": "A Emily diz que e assistente da Andreia. Nunca finge ser a Andreia."
+    },
+    "comercial": {
+      "desconto_direto": false,
+      "bonus_aprovado": "Pacote de 10 sessoes: a cliente paga 9 (resposta 3.6).",
+      "regra": "Nenhum outro desconto, cortesia ou condicao pode ser oferecido sem falar com Andreia."
+    },
+    "conteudo_bloqueado": [
+      {
+        "alegacao": "EMSzero / EMS Zero / MS Zero queima ate 1.000 calorias",
+        "status": "BLOQUEADA",
+        "motivo": "Alegacao de resultado sem fonte tecnica verificavel (PRD RF-06). Vale para qualquer variacao: 'queima X calorias', 'equivale a N dias de exercicio', 'equivale a N abdominais'.",
+        "descricao_aprovada": "O EMSzero e uma maquina de tonificacao muscular que trabalha tres areas em uma sessao: abdomen, posterior e gluteos."
+      },
+      {
+        "alegacao": "qualquer promessa de resultado corporal, clinico ou de perda de peso",
+        "status": "BLOQUEADA",
+        "motivo": "A Emily descreve o procedimento; nao promete resultado."
+      }
+    ],
+    "conhecimento_aprovado": "A Emily so pode citar o nome do procedimento e a descricao aprovada por Andreia (resposta 3.4). Nada fora disso."
+  },
+  "servicos": [
+    {
+      "id": "drenagem-linfatica",
+      "nome_publico": "Drenagem linfática",
+      "nome_en": "Lymphatic drainage",
+      "preco_usd": 60,
+      "politica_operacional": {
+        "duracao_min": 50,
+        "buffer_min": 10,
+        "requer_confirmacao_explicita": true,
+        "escalar_se_duvida": true,
+        "exige_avaliacao_previa": true
+      }
+    },
+    {
+      "id": "pos-operatorio",
+      "nome_publico": "Pós-operatório",
+      "nome_en": "Post-operative care",
+      "preco_usd": 100,
+      "politica_operacional": {
+        "duracao_min": 80,
+        "buffer_min": 10,
+        "requer_confirmacao_explicita": true,
+        "escalar_se_duvida": true,
+        "exige_avaliacao_previa": true
+      }
+    },
+    {
+      "id": "massoterapia-masculina",
+      "nome_publico": "Massoterapia masculina",
+      "nome_en": "Men's massage therapy",
+      "preco_usd": 70,
+      "politica_operacional": {
+        "duracao_min": 50,
+        "buffer_min": 10,
+        "requer_confirmacao_explicita": true,
+        "escalar_se_duvida": true,
+        "exige_avaliacao_previa": true
+      }
+    }
+  ],
+  "sinal_e_lista_de_espera": {
+    "status": "PENDENTE-CONFIRMAR",
+    "resposta_4_6": "Andreia disse que quer lista de espera e, se possivel, um sinal — mas nao definiu regra.",
+    "regra": "[PREENCHER — PENDENTE-CONFIRMAR 4.6: valor do sinal, se e reembolsavel, em quais servicos/dias vale, e como a lista de espera escolhe quem entra numa vaga aberta. Sem isso a Emily nao pode mencionar sinal nem prometer lista de espera.]"
+  },
+  "retencao_de_registros": {
+    "status": "PENDENTE-CONFIRMAR",
+    "resposta_7_3": "Ainda vou decidir",
+    "regra": "[PREENCHER — PENDENTE-CONFIRMAR 7.3: por quantos dias os registros minimos do piloto ficam guardados e o que e apagado depois. Gate B do PRD exige politica de retencao antes de qualquer dado real.]"
+  },
+  "exemplos_para_avaliacao": {
+    "status": "PENDENTE-CONFIRMAR",
+    "resposta_9_1_9_2": "Andreia repetiu o texto da instrucao; nao entregou os exemplos.",
+    "regra": "[PREENCHER — PENDENTE-CONFIRMAR 9.1/9.2: 3 exemplos anonimizados que viraram agendamento e 3 que nao viraram, por canal seguro, sem nome, telefone, data ou dado clinico. Sao a base da suite de avaliacao do prompt.]"
+  },
+  "metricas_base": {
+    "mensagens_dia_normal": 15,
+    "mensagens_dia_cheio": 30,
+    "tempo_primeira_resposta_quando_livre_min": 10,
+    "faltas_sem_avisar_ultimas_4_semanas": 4,
+    "minutos_admin_por_dia": "90 a 120",
+    "sucesso_em_7_dias": [
+      "confirmar a agenda sem mensagem repetida",
+      "responder novos pedidos em ate 15 minutos",
+      "criar um plano piloto de divulgacao"
+    ]
+  }
+}
