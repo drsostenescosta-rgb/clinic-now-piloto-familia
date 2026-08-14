@@ -59,6 +59,20 @@ a ponte roda com a chave 401 e as propostas saem normalmente, marcadas `texto_po
   vigiar: se 90% escalar, a Emily não tirou trabalho das costas dela.
 - Cada regra nova é código, não linha de prompt. Mais lento de mudar, e é o preço da garantia.
 
+## Limite conhecido do validador de polimento
+
+`validarPolimento()` (em `api.mjs`) é uma **denylist**: ele reprova a reescrita do LLM quando ela
+introduz número, moeda, promessa de resultado ou vocabulário que a decisão bloqueou. Denylist
+sempre tem furo — `"faço um precinho especial"` e `"pro seu caso a drenagem resolve certinho"`
+passam hoje.
+
+Isso está inerte enquanto a chave estiver 401, mas não deixa de ser dívida. **O caminho definitivo
+é allowlist**: o polido só pode reordenar e reescrever o que já estava no rascunho, sem introduzir
+afirmação nova nenhuma. Enquanto a allowlist não existir, a regra prática é a que já vale — quem
+aprova lê o texto antes de colar.
+
+Registrado a pedido da auditoria de 14/08/2026 (rodada 3).
+
 ## O que faria mudar de ideia
 
 Ligar o LLM como decisor exigiria, juntas: chave válida e monitorada; a suíte de eval com
