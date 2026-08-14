@@ -1,7 +1,7 @@
 # Fonte de verdade da agenda: Agendor
 
 - **Data:** 2026-08-14
-- **Status:** ⚠️ **ABERTA — aguardando decisão de Sostenes.** A configuração já grava `Agendor`, mas a consequência abaixo não foi resolvida.
+- **Status:** ✅ **DECIDIDA — opção C (Agendor manda, ClinicNow espelha).** Implementada atrás de flag em `~/Applications/medgrowth/emily-vendas/agendor.mjs`. Falta **só o token da Andreia** para ligar. Ver "Resolução" no fim.
 
 ## Contexto
 
@@ -40,3 +40,54 @@ Trocar a ferramenta da mãe na primeira semana é o caminho mais rápido para o 
 ## Consequência se ficar sem decisão
 
 A Emily fica proibida de afirmar disponibilidade (já está assim no prompt atual). Ela coleta preferência de horário e devolve para conferência humana.
+
+---
+
+## Resolução — 14/08/2026
+
+**Escolhida a opção C.** O Agendor continua sendo a fonte de verdade; o ClinicNow lê e escuta.
+Trocar a ferramenta da Andreia na primeira semana continua sendo o caminho mais rápido de matar o
+piloto, e agora não é preciso: o espelho de leitura está implementado.
+
+### O que foi verificado de fato
+
+| Item | Estado |
+|---|---|
+| Autenticação `Authorization: Token <uuid>` | ✔ confirmado na documentação pública |
+| Base da API v3 `https://api.agendor.com.br/v3` | ✔ confirmado |
+| Assinatura de webhook: `POST /integrations/subscriptions` com `{target_url, event}`, evento `on_activity_created` | ✔ confirmado |
+| **Caminho exato de LEITURA de compromissos e formato da resposta** | ✘ **NÃO verificado** — impossível sem um token real |
+
+Chutar o endpoint seria exatamente a suposição que este piloto proíbe. Por isso existe um comando
+de descoberta em vez de um palpite:
+
+```bash
+cd ~/Applications/medgrowth
+AGENDOR_TOKEN=<token-da-andreia> npm run agendor:descobrir
+```
+
+Ele sonda os seis candidatos (`/tasks`, `/users/tasks`, `/deals/tasks`, `/activities`, `/events`…),
+reporta o status de cada um e grava o que respondeu 200 em `.agendor/descoberta.json`. Só depois
+disso a leitura liga.
+
+### O que falta, exatamente
+
+1. **Token da API.** A Andreia gera em Agendor → Configurações → Integrações → API. É um dado dela;
+   Sostenes não deve gerar por ela nem guardar no repositório — vai no `.env` local.
+2. **Confirmar que o plano dela libera a API.** Se `descobrir` devolver 403 em tudo, o plano não
+   libera e a opção C morre — aí a Fase 1 segue na opção A (a Emily não afirma disponibilidade,
+   que já é o comportamento atual e passa nos testes).
+3. **`AGENDOR_WEBHOOK_SECRET`** e uma URL pública para o webhook, quando quisermos tempo real.
+   Sem isso o espelho é sincronizado por comando (`npm run agendor:sync`).
+
+### Proteções que já estão no código
+
+- **Desligado por padrão.** Sem `AGENDOR_ENABLED=true` + token, o módulo devolve
+  `{disponivel:false, motivo}` e **não trava o painel** — a operação segue sem afirmar horário.
+- **Espelho velho não vale.** Acima de 15 minutos o espelho é marcado `obsoleto` e a ponte trata
+  como indisponível. Dado velho de agenda é pior que dado ausente: gera dupla marcação.
+- **Somente leitura.** Não existe função que escreva na agenda dela. A escrita continua sendo dela,
+  no Agendor.
+- **Webhook exige HMAC.** POST sem `X-ClinicNow-Signature` válido devolve 401 — verificado.
+- **Item sem data é descartado**, nunca convertido em horário chutado.
+

@@ -19,6 +19,12 @@ Já existem duas entregas independentes dessas respostas:
 
 O estado detalhado, os comandos e os limites estão em `docs/estado-implementacao-2026-08-11.md`.
 
+**14/08:** as três entregas acima foram ligadas ponta a ponta. O motor de conversa que já existia
+em `~/Applications/medgrowth/emily-vendas` ganhou um **motor de regras determinístico**, um
+**ledger de aprovações** e uma **ponte HTTP**; o ClinicNow ganhou o **Painel de Aprovação**, que é
+a tela onde a dona realmente trabalha na Fase 1. Nada é enviado automaticamente. Como operar:
+`docs/kit-operacao-diaria.md`. Como demonstrar: `docs/roteiro-demo-andreia.md`.
+
 ## Regras do piloto (invioláveis)
 
 1. **Dados dela ficam locais** neste repositório e/ou na conta Supabase da operação — nada é publicado, nada vira material de marketing sem novo consentimento específico.
@@ -31,6 +37,8 @@ O estado detalhado, os comandos e os limites estão em `docs/estado-implementaca
 
 - `config/clinica-andreia.md` — **configuração da clínica** a partir das respostas de Andreia (11/08/2026): identidade, agenda, serviços, regras invioláveis e as pendências abertas. Comece por aqui.
 - `config/clinica-config.json`, `config/agenda-config.json`, `config/operacao-assistida.json` — a mesma configuração no formato que o preflight lê.
+- `docs/kit-operacao-diaria.md` — **como rodar o dia**: quem aprova, em que horário, o que fazer quando a Emily escala, e as métricas de base. É o documento que a Andreia usa.
+- `docs/roteiro-demo-andreia.md` — roteiro da demonstração de 10 minutos (serve também para a Lohane).
 - `docs/roteiro-entrevista.md` — roteiro da entrevista de descoberta com a mãe.
 - `docs/consentimento.md` — termo de consentimento LGPD para gravação e uso dos dados no piloto.
 - `docs/operacao-assistida-andreia.md` — runbook da operação humana no loop.

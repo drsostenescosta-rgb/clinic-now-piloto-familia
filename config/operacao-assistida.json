@@ -42,8 +42,9 @@
       "reconfirma_termos_ambiguos": true,
       "aceitos": ["sim", "confirmo", "confirmado", "sim, confirmo"],
       "nao_aceitos": ["ta bom", "tá bom", "ok", "blz", "👍", "emoji sozinho", "silencio"],
-      "mensagem_vespera": "Oi, [nome]! Tudo bem? Passando para confirmar seu horario amanha, as [hora], para [servico]. Voce confirma que estara presente? 🙋‍♀️",
-      "repergunta_padrao": "So para confirmar direitinho: posso considerar confirmado seu horario de [servico], amanha as [hora]? Responde sim ou nao, por favor 😘"
+      "_nota_acentuacao": "Os dois textos abaixo saem para a CLIENTE. Foram gravados sem acento na primeira transcricao (14/08) e tiveram os acentos RESTAURADOS em 14/08. Restaurar acento nao e inventar conteudo — e mandar portugues sem acento para a cliente parece desleixo. A estrutura das frases da Andreia nao foi alterada. As tres respostas-modelo no tom dela (pendencia 6.5) continuam PENDENTES.",
+      "mensagem_vespera": "Oi, [nome]! Tudo bem? Passando para confirmar seu horário amanhã, às [hora], para [servico]. Você confirma que estará presente? 🙋‍♀️",
+      "repergunta_padrao": "Só para confirmar direitinho: posso considerar confirmado seu horário de [servico], amanhã às [hora]? Responde sim ou não, por favor 😘"
     },
     "cancelamento": {
       "nao_remove_sem_confirmacao_explicita": true,
