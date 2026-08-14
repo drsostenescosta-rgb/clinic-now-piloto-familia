@@ -84,9 +84,16 @@ cartão. Essas você liga, não manda mensagem.
 
 ## 6. Por que o preflight está reprovado (e por que isso é certo)
 
-O preflight reprova com 11 problemas, todos vindos de **5 respostas que faltam da Andreia**.
-Enquanto isso durar, o sistema opera em **modo sintético**: a Emily **não oferece horário** e o
-sistema só aceita apelidos no formato `Cliente Demo NN`.
+O preflight reprova com **2 problemas**, vindos de **4 respostas que ainda faltam da Andreia**.
+No modo sintético o sistema só aceita apelidos `Cliente Demo NN`; no modo de operação real
+(seção 9) ele aceita a mensagem verdadeira e redige os dados sensíveis.
+
+> **A grade de horários saiu da lista em 14/08.** As respostas dela ("2:00 às 8:00") foram
+> resolvidas por dedução, não por palpite: uma clínica de estética não atende às 2 da manhã.
+> A regra está em `medgrowth/emily-vendas/interpretar-horarios.mjs` e o rastro de cada dedução
+> está em `config/agenda-config.json`. **A Emily já oferece horário** — mas, enquanto o espelho
+> do Agendor estiver desligado, cada proposta vem com o aviso *"CONFIRA no Agendor antes de
+> aprovar"*, porque os horários saem da grade dela, não da agenda dela.
 
 > **O que a proteção de dados realmente faz — e o que ela não faz.**
 > O sistema **recusa** e-mail, telefone (com ou sem separador, e com prefixo internacional), SSN e
@@ -98,7 +105,8 @@ sistema só aceita apelidos no formato `Cliente Demo NN`.
 
 | # | O que falta | Consequência hoje |
 |---|---|---|
-| 2.3 | Grade de horários semanais (as respostas têm AM/PM ambíguo: "sexta 8:00 às 8:00") | A Emily nunca diz um horário; coleta a preferência e devolve |
+| ~~2.3~~ | ~~Grade de horários~~ | ✅ **RESOLVIDA por dedução em 14/08** — a Emily já propõe horário |
+| — | **Em que dias ela vai à academia** (nova, e vale dinheiro) | Sexta e sábado ela declarou abrir às 08:00, o que colide com a academia 07:30–10:00. Prevalece o caminho seguro: bloqueio em todos os dias, então sex/sáb começam 10:00. **Ela perde 2h nos dois melhores dias** até responder |
 | 6.5 | Três mensagens escritas no tom dela | Os rascunhos saem em tom genérico e o painel avisa isso |
 | 9.1/9.2 | 3 conversas que viraram agendamento + 3 que não viraram, anonimizadas | Sem base de avaliação do prompt |
 | 7.3 | Por quantos dias guardar os registros | Gate B: bloqueia dado real |
