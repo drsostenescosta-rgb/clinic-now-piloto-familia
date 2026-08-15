@@ -123,14 +123,44 @@
     }
   ],
   "sinal_e_lista_de_espera": {
-    "status": "PENDENTE-CONFIRMAR",
-    "resposta_4_6": "Andreia disse que quer lista de espera e, se possivel, um sinal — mas nao definiu regra.",
-    "regra": "[PREENCHER — PENDENTE-CONFIRMAR 4.6: valor do sinal, se e reembolsavel, em quais servicos/dias vale, e como a lista de espera escolhe quem entra numa vaga aberta. Sem isso a Emily nao pode mencionar sinal nem prometer lista de espera.]"
+    "status": "DECIDIDO",
+    "decidido_por": "Sostenes",
+    "data": "2026-08-14",
+    "resposta_4_6_original": "Andreia disse que queria lista de espera e, se possivel, um sinal.",
+    "lista_de_espera": {
+      "existe": false,
+      "no_lugar_dela": "remanejo caso a caso",
+      "regra": "Nao existe fila. Quando alguem quer um horario ocupado, a Andreia decide se vale perguntar a cliente daquele horario se ela topa mudar. A Emily coleta o horario desejado, nao promete fila nem aviso automatico, e nao fala com a outra cliente sem decisao da Andreia.",
+      "motor": "COM.SEM_LISTA_DE_ESPERA (resposta a quem pergunta) + mensagemRemanejo() (rascunho do pedido a cliente que tem o horario)."
+    },
+    "remanejo": {
+      "quem_decide": "Andreia",
+      "tom_exigido": "A cliente precisa sentir que nao esta sendo incomodada e que pode dizer nao sem constrangimento. A mensagem afirma primeiro que o horario dela esta garantido, oferece uma alternativa concreta, e termina dando permissao de recusar sem justificar.",
+      "invioalveis": [
+        "nunca dizer que outra cliente quer o horario",
+        "nunca criar urgencia ou pressionar",
+        "silencio nao e aceite; 'ta bom' nao e aceite",
+        "a agenda so muda depois de um sim explicito"
+      ]
+    },
+    "sinal": {
+      "existe": false,
+      "regra": "Nao ha politica de sinal. A Emily nunca menciona sinal e escala se a cliente perguntar. Silencio de Sostenes sobre sinal nao virou 'sim' nem valor inventado — virou comportamento definido: nao cobrar nada.",
+      "motor": "COM.SINAL_SEM_POLITICA"
+    }
   },
   "retencao_de_registros": {
-    "status": "PENDENTE-CONFIRMAR",
-    "resposta_7_3": "Ainda vou decidir",
-    "regra": "[PREENCHER — PENDENTE-CONFIRMAR 7.3: por quantos dias os registros minimos do piloto ficam guardados e o que e apagado depois. Gate B do PRD exige politica de retencao antes de qualquer dado real.]"
+    "status": "DECIDIDO",
+    "decidido_por": "Sostenes",
+    "data": "2026-08-14",
+    "resposta_7_3_original": "Ainda vou decidir",
+    "prazo_dias": 90,
+    "contado_a_partir_de": "ultimo contato da cliente",
+    "finalidade": "Remarketing: se a cliente fez o primeiro contato e nao fechou, o registro fica 3 meses para uma nova tentativa. Passado o prazo, o registro e apagado.",
+    "o_que_fica": "Primeiro nome, servico de interesse, horario preferido, estagio no funil e data do ultimo contato.",
+    "o_que_nunca_fica": "Conteudo clinico, diagnostico, exame, pagamento, foto, documento.",
+    "opt_out": "Pedido de PARAR/SAIR apaga o registro antes do prazo e bloqueia novo contato — o prazo de 90 dias nao autoriza insistir em quem pediu para sair.",
+    "pendente_de_implementacao": "A purga automatica aos 90 dias ainda NAO existe em codigo. Enquanto nao existir, o piloto roda sem dado real ou com purga manual registrada no ledger."
   },
   "exemplos_para_avaliacao": {
     "status": "PENDENTE-CONFIRMAR",
