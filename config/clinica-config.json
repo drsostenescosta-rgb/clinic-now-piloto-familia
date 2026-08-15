@@ -6,9 +6,12 @@
   "nome_humano_responsavel": "Andreia Carvalho",
   "fuso_horario": "America/New_York",
   "idiomas": {
-    "suportados": ["pt", "en", "es"],
+    "_correcao": "14/08/2026, informado por Sostenes: a Andreia FALA portugues e espanhol; NAO fala ingles — atende americanas com apoio de traducao. A versao anterior tratava os tres idiomas como equivalentes, o que fazia a Emily poder responder em ingles em nome de quem nao sustenta a conversa na sala.",
+    "fala": ["pt", "es"],
+    "atende_com_traducao": ["en"],
     "padrao": "idioma_da_cliente",
-    "regra": "Responder sempre no idioma em que a cliente escreveu. Se nao der para identificar, escalar para Andreia em vez de escolher por conta propria."
+    "regra": "Responder no idioma em que a cliente escreveu, entre os que a Andreia FALA (pt, es). Mensagem em ingles ESCALA: a Emily nao inicia em nome dela uma conversa que ela nao consegue continuar no atendimento. Se nao der para identificar o idioma, escalar tambem.",
+    "_nota_motor": "O motor de regras ja escala qualquer idioma que nao seja pt (IDIOMA.NAO_IDENTIFICADO), porque nao existem regras validadas em outro idioma. Espanhol so passa a ser respondido pela Emily quando houver as frases-modelo da Andreia em espanhol — hoje nem em portugues elas existem (pendencia 6.5)."
   },
   "canal_piloto": {
     "fase_1": "WhatsApp atual da clinica (numero pessoal da Andreia) — modo assistido, sem envio automatico",
