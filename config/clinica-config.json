@@ -35,6 +35,8 @@
     "respostas_modelo": {
       "_origem": "Regra de venda definida por Sostenes em 14/08/2026. A Andreia respondeu apenas '3' a pergunta 6.5; o QUE dizer agora esta definido pelo dono do projeto, o COMO dizer segue rascunho nosso.",
       "_status_do_texto": "RASCUNHO — aguardando a Andreia ler e ajustar as palavras. A politica abaixo ja e vinculante; a redacao nao. Nada e enviado sem ela aprovar no painel (Fase 1).",
+      "aprovado_pela_andreia": false,
+      "_como_aprovar": "Depois de a Andreia ler as tres frases e ajustar o que nao for a cara dela, trocar para true. E isso que faz o gate marcar tom_validado. Enquanto for false, o painel mostra que o tom ainda nao foi validado por ela.",
       "preco": {
         "regra": "NUNCA passar valor antes de entender o que a cliente precisa. Qualificar primeiro, precificar depois, e so o servico dela — nunca a tabela inteira.",
         "porque": "Preco solto na primeira mensagem transforma a conversa em comparacao com a concorrente antes de a cliente entender o que ela mesma quer.",
