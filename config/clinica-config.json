@@ -2,13 +2,18 @@
   "_fonte": "Questionario de lacunas respondido por Andreia em 11/08/2026 (Notion 3b911331-20fd-81d7-8bcb-fbd2f47b6b78) + entrevista 11/08/2026.",
   "_aviso": "Campos com [PREENCHER sao PENDENTE-CONFIRMAR: o preflight falha de proposito ate Andreia responder. Nao inventar valor.",
   "nome_clinica": "Andréia Carvalho Aesthetics",
-  "endereco_clinica": "54 Main Street, 1º piso, sala 001A",
+  "endereco_clinica": "54 Main Street, 1º piso, sala 001A, Leominster, MA 01453",
   "nome_humano_responsavel": "Andreia Carvalho",
   "fuso_horario": "America/New_York",
   "idiomas": {
     "_correcao": "14/08/2026, informado por Sostenes: a Andreia FALA portugues e espanhol; NAO fala ingles — atende americanas com apoio de traducao. A versao anterior tratava os tres idiomas como equivalentes, o que fazia a Emily poder responder em ingles em nome de quem nao sustenta a conversa na sala.",
-    "fala": ["pt", "es"],
-    "atende_com_traducao": ["en"],
+    "fala": [
+      "pt",
+      "es"
+    ],
+    "atende_com_traducao": [
+      "en"
+    ],
     "padrao": "idioma_da_cliente",
     "regra": "Responder no idioma em que a cliente escreveu, entre os que a Andreia FALA (pt, es). Mensagem em ingles ESCALA: a Emily nao inicia em nome dela uma conversa que ela nao consegue continuar no atendimento. Se nao der para identificar o idioma, escalar tambem.",
     "_nota_motor": "O motor de regras ja escala qualquer idioma que nao seja pt (IDIOMA.NAO_IDENTIFICADO), porque nao existem regras validadas em outro idioma. Espanhol so passa a ser respondido pela Emily quando houver as frases-modelo da Andreia em espanhol — hoje nem em portugues elas existem (pendencia 6.5)."
@@ -22,7 +27,13 @@
   "voz": {
     "tamanho_mensagem": "curta",
     "formalidade": "informal — proibido tom formal ou gessado",
-    "emojis_aprovados": ["🙋‍♀️", "💆🏼‍♀️", "😘", "✨", "✅"],
+    "emojis_aprovados": [
+      "🙋‍♀️",
+      "💆🏼‍♀️",
+      "😘",
+      "✨",
+      "✅"
+    ],
     "_nota_emojis": "Ela LISTOU esses no questionario, mas nas mensagens que ela digitou de verdade (amostras de 15/08) nao aparece nenhum — o unico emoji visto, o 😊, era do template do robo. Provavel que sejam de conversa ja adiantada. Regra ate ela dizer o contrario: emoji com parcimonia, e NENHUM no primeiro contato.",
     "evitar": [
       "Prezada cliente",
@@ -105,6 +116,10 @@
     "horario preferido",
     "motivo/indicacao do servico (resposta 7.4)"
   ],
-  "acesso_aos_registros": ["Andreia Carvalho", "Sostenes"],
-  "opt_out": "Se a pessoa escrever PARAR ou SAIR, interromper mensagens e registrar o pedido (resposta 7.6)."
+  "acesso_aos_registros": [
+    "Andreia Carvalho",
+    "Sostenes"
+  ],
+  "opt_out": "Se a pessoa escrever PARAR ou SAIR, interromper mensagens e registrar o pedido (resposta 7.6).",
+  "_endereco_completado_em": "2026-08-15 — cidade, estado e ZIP informados por Sostenes. Antes estava '54 Main Street, 1º piso, sala 001A', sem cidade nem ZIP: a Emily informaria um endereco que existe em dezenas de cidades de Massachusetts."
 }
