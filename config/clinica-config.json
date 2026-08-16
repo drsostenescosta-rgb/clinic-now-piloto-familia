@@ -108,6 +108,17 @@
         "texto": "Claro, já estou chamando a Andreia pra falar com você 😘",
         "motor": "R8.NAO_SABE e as regras de escalada"
       }
+    },
+    "credenciais": {
+      "_fonte": "Sostenes, 16/08/2026.",
+      "pode_dizer": [
+        "Enfermeira formada no Brasil",
+        "Esteticista licenciada em Leominster, MA",
+        "Massoterapeuta e esteticista ha mais de 10 anos",
+        "Trabalhou como aconselhadora de mulheres e familias"
+      ],
+      "regra_da_enfermagem": "A palavra 'enfermeira' NUNCA sai sozinha: sempre com 'formada no Brasil'. Sem o pais, a cliente americana presume licenca de Massachusetts. Nao e o fato que cria risco — e a palavra separada da origem. E proibido usar 'enfermeira' como credencial DO ATENDIMENTO (ao lado de preco ou servico): o que qualifica o atendimento aqui e a licenca de esteticista.",
+      "porque_importa": "E diferenciacao real num setor onde a maioria tem certificado de fim de semana. Esconder era cautela no lugar errado."
     }
   },
   "dados_minimos_para_agendar": [
