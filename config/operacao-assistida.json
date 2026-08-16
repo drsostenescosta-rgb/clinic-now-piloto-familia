@@ -40,8 +40,21 @@
     "confirmacao": {
       "exige_confirmacao_explicita": true,
       "reconfirma_termos_ambiguos": true,
-      "aceitos": ["sim", "confirmo", "confirmado", "sim, confirmo"],
-      "nao_aceitos": ["ta bom", "tá bom", "ok", "blz", "👍", "emoji sozinho", "silencio"],
+      "aceitos": [
+        "sim",
+        "confirmo",
+        "confirmado",
+        "sim, confirmo"
+      ],
+      "nao_aceitos": [
+        "ta bom",
+        "tá bom",
+        "ok",
+        "blz",
+        "👍",
+        "emoji sozinho",
+        "silencio"
+      ],
       "_nota_acentuacao": "Os dois textos abaixo saem para a CLIENTE. Foram gravados sem acento na primeira transcricao (14/08) e tiveram os acentos RESTAURADOS em 14/08. Restaurar acento nao e inventar conteudo — e mandar portugues sem acento para a cliente parece desleixo. A estrutura das frases da Andreia nao foi alterada. As tres respostas-modelo no tom dela (pendencia 6.5) continuam PENDENTES.",
       "mensagem_vespera": "Oi, [nome]! Tudo bem? Passando para confirmar seu horário amanhã, às [hora], para [servico]. Você confirma que estará presente? 🙋‍♀️",
       "repergunta_padrao": "Só para confirmar direitinho: posso considerar confirmado seu horário de [servico], amanhã às [hora]? Responde sim ou não, por favor 😘"
@@ -68,10 +81,11 @@
     },
     "conteudo_bloqueado": [
       {
-        "alegacao": "EMSzero / EMS Zero / MS Zero queima ate 1.000 calorias",
+        "alegacao": "EMShape Neo / EMSzero / EMS Zero / MS Zero queima ate 1.000 calorias",
         "status": "BLOQUEADA",
         "motivo": "Alegacao de resultado sem fonte tecnica verificavel (PRD RF-06). Vale para qualquer variacao: 'queima X calorias', 'equivale a N dias de exercicio', 'equivale a N abdominais'.",
-        "descricao_aprovada": "O EMSzero e uma maquina de tonificacao muscular que trabalha tres areas em uma sessao: abdomen, posterior e gluteos."
+        "descricao_aprovada": "O EMShape Neo e uma maquina de tonificacao muscular que trabalha tres areas em uma sessao: abdomen, posterior e gluteos.",
+        "_nome_corrigido": "16/08/2026: Sostenes confirmou que o aparelho e EMShape Neo; ela escreveu EMSzero no questionario de 11/08. O nome antigo continua na lista de deteccao de proposito."
       },
       {
         "alegacao": "qualquer promessa de resultado corporal, clinico ou de perda de peso",
@@ -178,5 +192,10 @@
       "responder novos pedidos em ate 15 minutos",
       "criar um plano piloto de divulgacao"
     ]
+  },
+  "_equipamentos": {
+    "_status": "Nome corrigido em 16/08/2026 por Sostenes. Marca/modelo dos outros dois (radiofrequencia e ultracavitacao) ainda NAO informados.",
+    "contracao_muscular": "EMShape Neo",
+    "fda": "NAO AFIRMAR. O banco 510(k) da FDA nao retorna nada para 'EMShape' (consultado via openFDA em 16/08; a API responde — BTL volta com K233849, K213344). Isso nao prova ausencia: a Emsculpt, por exemplo, e registrada como BTL-899A e nao pelo nome comercial. So escrever 'FDA 510(k) K_____' depois que o fornecedor informar o numero K e eu confirmar no banco."
   }
 }
