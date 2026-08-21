@@ -1,5 +1,19 @@
 # WhatsApp da Andréia — estado real em 21/08/2026 (madrugada)
 
+## Atualização verificada no Gmail — 03:09 UTC
+
+Maria Marcelyna, líder regional de suporte da 360dialog, solicitou capturas da entrada pendente
+`Not verified` dentro da WABA. Ela informou que a equipe não consegue orientar os próximos
+passos sem visibilidade dessas telas. Isso substitui a sequência operacional abaixo: antes de
+uma nova tentativa, o próximo passo é fornecer a evidência solicitada e obter uma resposta
+técnica específica.
+
+Correção de risco: a opção `Enter a new phone number` não é, isoladamente, prova de Coexistence
+nem ação de “risco zero”. Ela também pode aparecer em onboarding padrão com SMS/voz. O gate
+seguro exige que a interface identifique explicitamente a conexão do WhatsApp Business App
+existente, com `Coexistence` ainda visível no Hub. Até lá, parar antes de selecionar ou submeter
+o número.
+
 Sucessor de `whatsapp-estado-2026-08-17.md`. Aquele documento continua válido para o
 inventário de IDs; **este aqui manda no diagnóstico**, porque o diagnóstico de 17/08
 estava errado.
@@ -120,7 +134,7 @@ Session ID da última tentativa: `01a02234-cf4a-7cca-9347-4debb657ef82`.
 
 | | Ação | Risco | Estado |
 |---|---|---|---|
-| **A** | Escolher **`Enter a new phone number`** e digitar o número, em vez do registro listado | **Zero.** Não apaga nada. É o que a doc do 360dialog manda ("Enter the phone number again and verify") | **Nunca testada** |
+| **A** | Registrar o fluxo até a tela de seleção e confirmar que a UI identifica explicitamente o app existente em Coexistence | **Baixo enquanto não houver submissão.** `Enter a new phone number` sozinho é ambíguo | **Aguardando evidências e resposta do suporte** |
 | **B** | Remover o cadastro pendente `1287805514415120` da WABA | **Desconhecido.** Há relatos de cooldown de 1–2 meses da Meta para reusar número que saiu de uma WABA. Os relatos descrevem números que chegaram a ficar conectados; o dela nunca ficou — mas não temos prova de que a distinção vale | **Bloqueada até o suporte confirmar** |
 
 Sostenes recusou explicitamente autorizar B enquanto o cooldown não estiver esclarecido, e

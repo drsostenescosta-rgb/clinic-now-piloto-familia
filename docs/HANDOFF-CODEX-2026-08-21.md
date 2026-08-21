@@ -44,6 +44,25 @@ explicada abaixo.
 
 ## Onde exatamente o processo parou
 
+## Atualização posterior do suporte — 21/08, 03:09 UTC
+
+Maria Marcelyna, líder regional de suporte da 360dialog, pediu capturas da entrada pendente
+`Not verified` dentro da WABA. Ela declarou que a equipe não tem visibilidade suficiente para
+confirmar os próximos passos sem ver essas telas. Portanto, este handoff **não autoriza uma
+nova tentativa** até que as evidências solicitadas sejam entregues e o suporte esclareça o
+estado técnico do cadastro.
+
+Antes de qualquer nova tentativa, reunir:
+
+1. captura da entrada `Not verified` dentro da WABA, com o contexto da conta visível;
+2. captura atual de `Plataforma do WhatsApp Business` no celular;
+3. captura dos parceiros do portfólio e da WABA;
+4. inventário dos dispositivos vinculados e confirmação de backup recente.
+
+“Enter a new phone number” sozinho **não identifica Coexistence**. Essa opção também pode levar
+ao onboarding padrão com SMS/voz. Só continuar quando a interface disser explicitamente que
+está conectando o WhatsApp Business App existente e o Hub permanecer marcado `Coexistence`.
+
 No pop-up de Embedded Signup da Meta, aberto pelo 360dialog Hub
 (`app.360dialog.com/client/93fqW7piCL/channel` → *Continue onboarding*), chega-se à tela:
 
@@ -76,10 +95,11 @@ foi desligado e se ele tem o print.
 Hipótese (não é fato): a IA da Meta pode ocupar o mesmo lugar que o Coexistence precisa.
 Desligar é grátis e não apaga nada, então vem antes de tudo.
 
-### Passo 2 — refazer o fluxo escolhendo a opção 1, gravando a tela
+### Passo 2 — bloqueado: registrar o fluxo até a tela de seleção
 
-Esta é a variante **nunca testada** e é **sem risco**: não apaga nada. É o que a própria
-documentação do 360dialog manda ("Enter the phone number again and verify").
+Esta variante nunca foi testada e **não pode ser chamada de sem risco**. A próxima gravação
+deve parar antes de selecionar ou submeter o número, salvo se o suporte responder às evidências
+e o ramo de Coexistence estiver identificado explicitamente na própria interface.
 
 Caminho completo, do zero:
 
@@ -94,8 +114,9 @@ Caminho completo, do zero:
 6. **Confirme que o cabeçalho mostra a etiqueta `Coexistence`.** Se não mostrar, pare e volte.
 7. **Embedded Signup** → abre pop-up da Meta. Se o Chrome bloquear, permita pop-ups para
    `app.360dialog.com`.
-8. Na tela do número: **escolha `Enter a new phone number`** e digite o número.
-   **NÃO** escolha a opção 3 com o nome dela. **NÃO** marque "Display Name only".
+8. Na tela do número: **pare e registre a tela inteira**. `Enter a new phone number` só poderá
+   ser usado se essa tela estiver inequivocamente dentro de `Connect your existing WhatsApp
+   Business app`/Coexistence e houver autorização humana para continuar.
 9. O esperado é que chegue **uma mensagem dentro do WhatsApp dela**, vinda da conta oficial do
    Facebook, com QR code ou código de acesso. Ela toca na mensagem e escaneia o QR mostrado na
    tela do computador — o botão *"Conectar-se à Plataforma do WhatsApp Business"* já está na
@@ -105,7 +126,9 @@ Caminho completo, do zero:
 **Grave a tela do começo ao fim.** O suporte do 360dialog pediu esse vídeo e é o que destrava
 a resposta técnica deles.
 
-**Se aparecer SMS de novo:** pare, feche, não confirme código, e vá para o passo 3.
+**Se aparecer SMS ou voz:** pare antes de solicitar ou confirmar código, registre a tela e envie
+ao suporte. Isso não prova sozinho a causa técnica, mas prova que o gate de Coexistence não está
+claro o suficiente para este número crítico.
 
 ### Passo 3 — a remoção bloqueada
 
